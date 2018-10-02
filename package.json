@@ -14,7 +14,9 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy" : "npm run build && surge dist --domain countryagg.surge.sh"
+    
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

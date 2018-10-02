@@ -9,7 +9,7 @@
 {{/if}}
 <input type = "date" class = "form-control" placeholder="Choose a Date"  value = {{date}} onChange = {{action (mut date) value = "target.value"}}/>
 
-{{#if demographics}}
+{{#if isCountrySelected}}
 <div>
     <table class = "table">
         <thead>
