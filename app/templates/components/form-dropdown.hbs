@@ -2,7 +2,7 @@
 
  <div class="form-group dropdown">
     <label for={name}>{{label}}</label>
-    <select class="form-control" id={name} name = {name} onchange={{ action "handleChange"  value="target.value"}}>
+    <select class="form-control" id={{name}} name = {{name}} onchange={{ action "handleChange"  value="target.value"}}>
       <option class = "dropdown-item" value ="">Please select a {{name}}</option>
       {{#each options as |option|}}
        <option class = "dropdown-item" value = {{option._id}} >{{option.label}}</option>

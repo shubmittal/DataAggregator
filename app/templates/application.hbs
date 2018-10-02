@@ -3,11 +3,41 @@
 
 <div class="col-6">
 
-{{form-dropdown name = "country" label = "Countries"  options = countries onSelect = (action "handleChange")}}
-{{#if isCountrySelected}}
-<div>djwhdhsh</div>
+{{form-dropdown name = "country" label = "Countries:"  options = countries onSelect = (action "handleChange")}}
+{{#if isCountrySelected }}
+{{form-dropdown name = "city" label = "Cities:"  options = cities onSelect = (action "handleChange") disabled = isCountrySelected}}
 {{/if}}
+<input type = "date" class = "form-control" placeholder="Choose a Date"  value = {{date}} onChange = {{action (mut date) value = "target.value"}}/>
+
+{{#if demographics}}
+<div>
+    <table class = "table">
+        <thead>
+            <tr>
+                <td scople="col">Name</td>
+                <td scople="col">Capital City</td>
+                 <td scople="col">Population</td>
+                <td scople="col">Region</td>
+                <td scople="col">Flag</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{demographics.name}}</td>                
+                <td>{{demographics.capital}}</td>
+                 <td>{{demographics.population}}</td>
+                <td>{{demographics.region}}</td>
+                 <td><img class="img-fluid" src = {{demographics.flag}}/></td>
+            </tr>
+        </tbody>
+    </table>
+   
 </div>
+ {{/if}} 
+
+</div>
+
+
 
 
 {{outlet}}
